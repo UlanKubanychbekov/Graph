@@ -1,0 +1,33 @@
+type Query{
+cars: [Car!]
+getById (id:ID!):CarResponse
+}
+type Mutation{
+save(carRequest: CarRequest): SimpleResponse!
+}
+type Car{
+id:ID!
+name: String
+email: String
+model:String
+color:String
+price: Int
+}
+
+input CarRequest{
+name: String
+email: String
+model: String
+color: String
+price: Int
+}
+type SimpleResponse{
+message :String
+}
+type CarResponse {
+name: String
+email: String
+model: String
+color: String
+price: Int
+}
